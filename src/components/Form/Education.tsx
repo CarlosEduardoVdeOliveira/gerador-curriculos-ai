@@ -89,7 +89,7 @@ export function EducationForm() {
         </div>
         <select
           value={status}
-          onChange={(e) => setStatus(e.target.value)}
+          onChange={(e) => setStatus(e.target.value as typeof status)}
           className="w-full px-3 py-2 border rounded-md"
         >
           {STATUS_OPTIONS.map((opt) => (
