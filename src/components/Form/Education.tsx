@@ -74,7 +74,7 @@ export function EducationForm() {
             label=""
             placeholder=""
             id="startDate"
-            type="date"
+            type="month"
             value={startDate}
             onChange={setStartDate}
           />
@@ -82,7 +82,7 @@ export function EducationForm() {
             label=""
             placeholder=""
             id="endDate"
-            type="date"
+            type="month"
             value={endDate}
             onChange={setEndDate}
           />
