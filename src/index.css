@@ -10,7 +10,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+button:not(:disabled) {
+  cursor: pointer;
+}
 /* Animações personalizadas */
 @keyframes fadeIn {
   from {
@@ -48,12 +50,12 @@
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
-  
+
   .responsive-button {
     min-height: 44px;
     min-width: 44px;
   }
-  
+
   .responsive-input {
     font-size: 16px; /* Previne zoom no iOS */
   }
@@ -67,8 +69,9 @@
 
 /* Transições suaves */
 * {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-

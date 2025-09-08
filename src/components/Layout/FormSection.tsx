@@ -1,3 +1,4 @@
+import { EducationForm } from "../Form/Education";
 import { Experience } from "../Form/Experience";
 import { PersonalInfo } from "../Form/PersonalInfo";
 import { ProfissionalSummary } from "../Form/ProfissionalSummary";
@@ -19,6 +20,7 @@ export function FormSection() {
           <PersonalInfo />
           <ProfissionalSummary />
         </div>
+        <EducationForm />
         <Skills />
         <Experience />
       </div>

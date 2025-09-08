@@ -1,3 +1,4 @@
+import { EducationSection } from "../Preview/EducationSection";
 import { ExperienceSection } from "../Preview/ExperienceSection";
 import { PersonalInfoPreview } from "../Preview/PersonalInfoSection";
 import { SkillsSection } from "../Preview/SkillsSection";
@@ -15,8 +16,8 @@ export function PreviewSection() {
       </div>
 
       <div className="p-4 lg:p-6 space-y-6 lg:space-y-8 shadow-lg overflow-y-auto overflow-x-hidden w-full max-h-[calc(100vh-280px)] rounded-b-xl bg-white">
-        
         <PersonalInfoPreview />
+        <EducationSection />
         <SkillsSection />
         <ExperienceSection />
 
