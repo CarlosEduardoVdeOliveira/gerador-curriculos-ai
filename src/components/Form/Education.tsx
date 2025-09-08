@@ -99,7 +99,7 @@ export function EducationForm() {
         <button
           onClick={handleAdd}
           disabled={!course.trim() || !institution.trim()}
-          className="flex items-center justify-center gap-2 bg-gray-500 text-white px-4 py-2 rounded-md w-full"
+          className="flex items-center cursor-pointer justify-center gap-2 bg-gray-500 text-white px-4 py-2 rounded-md w-full"
         >
           <Plus size={16} /> Adicionar
         </button>
