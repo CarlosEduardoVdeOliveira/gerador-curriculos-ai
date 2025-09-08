@@ -124,7 +124,7 @@ export function Experience() {
               value={descriptionActives}
               onChange={setDescriptionActives}
               label="Resumo Profissional"
-              maxLength={300}
+              maxLength={500}
               placeholder="Descreva brevemente sua experiência e objetivos profissionais..."
               showIAButton={true}
             />

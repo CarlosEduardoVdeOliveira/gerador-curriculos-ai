@@ -12,7 +12,7 @@ export function ProfissionalSummary() {
         value={profissionalSummaryValue}
         onChange={setProfissionalSummaryValue}
         label="Resumo Profissional"
-        maxLength={300}
+        maxLength={500}
         placeholder="Descreva brevemente sua experiência e objetivos profissionais..."
         showIAButton={true}
       />

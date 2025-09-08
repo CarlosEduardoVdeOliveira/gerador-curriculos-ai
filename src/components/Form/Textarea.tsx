@@ -16,7 +16,7 @@ export function Textarea({
   label = "Resumo Profissional",
   value,
   onChange,
-  maxLength = 300,
+  maxLength = 500,
   placeholder = "Descreva brevemente sua experiência e objetivos profissionais...",
   showIAButton = true,
 }: TextareaProps) {
