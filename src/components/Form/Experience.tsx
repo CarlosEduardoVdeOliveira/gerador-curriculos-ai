@@ -1,6 +1,7 @@
 import { Briefcase, Check, Plus, Trash2, X } from "lucide-react";
 import { useContext, useState } from "react";
 import { ExperienceContext } from "../../context/ExperienceContext";
+import Input from "./Input";
 import { Textarea } from "./Textarea";
 
 export function Experience() {
@@ -18,7 +19,6 @@ export function Experience() {
     experiences,
     setExperiences,
   } = useContext(ExperienceContext);
-  const [] = useState(0);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const isAddDisabled = !enterprise || !position || !startDate;
@@ -82,71 +82,41 @@ export function Experience() {
       {isFormOpen && (
         <div className="bg-gray-50 p-6 rounded-lg space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label
-                htmlFor="enterprise"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Empresa *
-              </label>
-              <input
-                placeholder="Nome da empresa"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-500 focus:border-transparent"
-                type="text"
-                value={enterprise}
-                id="enterprise"
-                onChange={(e) => setEnterprise(e.target.value.trim())}
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="position"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Cargo *
-              </label>
-              <input
-                placeholder="Seu cargo na empresa"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-500 focus:border-transparent"
-                type="text"
-                value={position}
-                id="position"
-                onChange={(e) => setPosition(e.target.value.trim())}
-              />
-            </div>
+            <Input
+              value={enterprise}
+              id="enterprise"
+              label="Empresa *"
+              placeholder="Nome da empresa"
+              type="text"
+              onChange={setEnterprise}
+            />
+            <Input
+              label="Cargo *"
+              placeholder="Seu cargo na empresa"
+              type="text"
+              value={position}
+              id="position"
+              onChange={setPosition}
+            />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label
-                htmlFor="startDate"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Data de Início
-              </label>
-              <input
-                type="month"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-500 focus:border-transparent"
-                value={startDate}
-                id="startDate"
-                onChange={(e) => setStartDate(e.target.value.trim())}
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="endDate"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Data de Fim
-              </label>
-              <input
-                type="month"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-500 focus:border-transparent"
-                value={endDate}
-                id="endDate"
-                onChange={(e) => setEndDate(e.target.value.trim())}
-              />
-            </div>
+            <Input
+              type="month"
+              value={startDate}
+              id="startDate"
+              label="Data de Início"
+              placeholder=""
+              onChange={setStartDate}
+            />
+            <Input
+              type="month"
+              value={endDate}
+              id="endDate"
+              label="Data de Fim"
+              placeholder=""
+              onChange={setEndDate}
+            />
           </div>
 
           <div>

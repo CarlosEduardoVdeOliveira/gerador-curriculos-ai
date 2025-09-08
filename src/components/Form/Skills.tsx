@@ -79,7 +79,6 @@ export function Skills() {
         </div>
       </div>
 
-      {/* Lista de skills — cada item edita seu próprio estado via context.updateSkill */}
       <div className="text-center py-8 text-gray-400">
         {skills.length > 0 ? (
           <div className="space-y-3">
