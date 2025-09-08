@@ -1,8 +1,8 @@
 import { useContext } from "react";
+import { EducationContext } from "../context/EducationContext";
 import { ExperienceContext } from "../context/ExperienceContext";
 import { PersonalInfoContext } from "../context/PersonalInfoContext";
 import { SkillsContext } from "../context/SkillsContext";
-import { EducationContext } from "../context/EducationContext";
 
 export function useCVData() {
   const personalInfo = useContext(PersonalInfoContext);
@@ -14,6 +14,6 @@ export function useCVData() {
     personalInfo: personalInfo || {},
     experience: experience || { experiences: [] },
     skills: skills || { skills: [] },
-    education: education || { education: [] },
+    education: education?.education || [],
   };
 }

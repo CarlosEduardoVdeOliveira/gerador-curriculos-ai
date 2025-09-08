@@ -50,26 +50,28 @@ export default function AppContent() {
 
       y += 30;
     }
-    if (education?.education?.length) {
-  doc.setFontSize(14);
-  doc.setFont("helvetica", "bold");
-  doc.text("Escolaridade", 14, y);
 
-  autoTable(doc, {
-    startY: y + 5,
-    head: [["Curso", "Instituição", "Período", "Status"]],
-    body: education.education.map((ed) => [
-      ed.course,
-      ed.institution,
-      `${ed.startDate} - ${ed.endDate || "Atual"}`,
-      ed.status,
-    ]),
-    styles: { fontSize: 11 },
-    headStyles: { fillColor: [66, 139, 202], textColor: 255 },
-  });
+    if (education.length) {
+      doc.setFontSize(14);
+      doc.setFont("helvetica", "bold");
+      doc.text("Escolaridade", 14, y);
 
-  y = (doc as any).lastAutoTable.finalY + 10;
-}
+      autoTable(doc, {
+        startY: y + 5,
+        head: [["Curso", "Instituição", "Período", "Status"]],
+        body: education.map((ed) => [
+          ed.course,
+          ed.institution,
+          `${ed.startDate} - ${ed.endDate || "Atual"}`,
+          ed.status,
+        ]),
+        styles: { fontSize: 11 },
+        headStyles: { fillColor: [80, 80, 80], textColor: 255 },
+      });
+
+      y = (doc as any).lastAutoTable.finalY + 10;
+    }
+
     if (experience?.experiences?.length) {
       doc.setFontSize(14);
       doc.setFont("helvetica", "bold");
@@ -107,7 +109,6 @@ export default function AppContent() {
         headStyles: { fillColor: [80, 80, 80], textColor: 255 },
       });
     }
-    
 
     doc.save("curriculo.pdf");
   };
