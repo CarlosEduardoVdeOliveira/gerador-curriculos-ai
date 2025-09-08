@@ -95,7 +95,7 @@ export function Experience() {
                 type="text"
                 value={enterprise}
                 id="enterprise"
-                onChange={(e) => setEnterprise(e.target.value)}
+                onChange={(e) => setEnterprise(e.target.value.trim())}
               />
             </div>
             <div>
@@ -111,7 +111,7 @@ export function Experience() {
                 type="text"
                 value={position}
                 id="position"
-                onChange={(e) => setPosition(e.target.value)}
+                onChange={(e) => setPosition(e.target.value.trim())}
               />
             </div>
           </div>
@@ -129,7 +129,7 @@ export function Experience() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                 value={startDate}
                 id="startDate"
-                onChange={(e) => setStartDate(e.target.value)}
+                onChange={(e) => setStartDate(e.target.value.trim())}
               />
             </div>
             <div>
@@ -144,7 +144,7 @@ export function Experience() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                 value={endDate}
                 id="endDate"
-                onChange={(e) => setEndDate(e.target.value)}
+                onChange={(e) => setEndDate(e.target.value.trim())}
               />
             </div>
           </div>

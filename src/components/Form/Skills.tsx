@@ -46,7 +46,7 @@ export function Skills() {
               placeholder="Nome da habilidade (ex: React, Python, Figma)"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:border-transparent"
               type="text"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setName(e.target.value.trim())}
             />
           </div>
 
@@ -83,28 +83,28 @@ export function Skills() {
       <div className="text-center py-8 text-gray-400">
         {skills.length > 0 ? (
           <div className="space-y-3">
-            {skills.map((s) => (
+            {skills.map((skill) => (
               <div
-                key={s.id}
+                key={skill.id}
                 className="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-lg"
               >
                 <div className="flex items-center gap-3 flex-1">
                   <input
                     className="font-medium text-gray-900 bg-transparent border-none focus:outline-none focus:ring-0 flex-1"
                     type="text"
-                    value={s.name}
+                    value={skill.name}
                     onChange={(e) =>
-                      updateSkill(s.id, { name: e.target.value })
+                      updateSkill(skill.id, { name: e.target.value.trim() })
                     }
                   />
 
                   <select
-                    value={s.level}
+                    value={skill.level}
                     onChange={(e) =>
-                      updateSkill(s.id, { level: e.target.value })
+                      updateSkill(skill.id, { level: e.target.value })
                     }
                     className="text-sm border-none bg-transparent focus:outline-none focus:ring-0"
-                    aria-label={`Nível de ${s.name}`}
+                    aria-label={`Nível de ${skill.name}`}
                   >
                     {LEVELS.map((lvl) => (
                       <option key={lvl} value={lvl}>
@@ -115,15 +115,15 @@ export function Skills() {
 
                   <span
                     className={`px-2 py-1 text-xs font-medium rounded-full ${
-                      levelColors[s.level] ?? "bg-gray-200 text-gray-800"
+                      levelColors[skill.level] ?? "bg-gray-200 text-gray-800"
                     }`}
                   >
-                    {s.level}
+                    {skill.level}
                   </span>
                 </div>
 
                 <button
-                  onClick={() => removeSkill(s.id)}
+                  onClick={() => removeSkill(skill.id)}
                   className="ml-3 p-2 text-red-500 hover:bg-red-50 rounded-md transition-colors"
                   title="Remover habilidade"
                 >
