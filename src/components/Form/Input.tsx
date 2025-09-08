@@ -14,7 +14,7 @@ export default function Input({
   type = "text",
   value,
   onChange,
-}: InputProps) {
+}: Readonly<InputProps>) {
   return (
     <div>
       <label
