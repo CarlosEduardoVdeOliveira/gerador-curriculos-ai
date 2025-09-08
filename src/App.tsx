@@ -1,4 +1,3 @@
-// App.tsx
 import "./App.css";
 import AppContent from "./components/AppContent";
 import { Footer } from "./components/Layout/Footer";
