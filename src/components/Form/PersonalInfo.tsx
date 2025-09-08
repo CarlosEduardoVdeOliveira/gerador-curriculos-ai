@@ -4,8 +4,16 @@ import { PersonalInfoContext } from "../../context/PersonalInfoContext";
 import Input from "./Input";
 
 export function PersonalInfo() {
-  const { setName, setEmail, setPhone, setLinkedin } =
-    useContext(PersonalInfoContext);
+  const {
+    name,
+    setName,
+    email,
+    setEmail,
+    phone,
+    setPhone,
+    linkedin,
+    setLinkedin,
+  } = useContext(PersonalInfoContext);
 
   return (
     <>
@@ -22,7 +30,7 @@ export function PersonalInfo() {
         label="Nome Completo *"
         placeholder="Seu nome completo"
         type="text"
-        value=""
+        value={name}
         onChange={setName}
       />
       <Input
@@ -30,7 +38,7 @@ export function PersonalInfo() {
         label=" Email *"
         placeholder="seu.email@exemplo.com"
         type="text"
-        value=""
+        value={email}
         onChange={setEmail}
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -39,7 +47,7 @@ export function PersonalInfo() {
           label="Telefone *"
           placeholder="(11) 99999-9999"
           type="text"
-          value=""
+          value={phone}
           onChange={setPhone}
         />
         <Input
@@ -47,7 +55,7 @@ export function PersonalInfo() {
           label="LinkedIn"
           placeholder="linkedin.com/in/seuperfil"
           type="text"
-          value=""
+          value={linkedin}
           onChange={setLinkedin}
         />
       </div>

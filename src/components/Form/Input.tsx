@@ -30,7 +30,7 @@ export default function Input({
         type={type}
         value={value}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          onChange(e.target.value.trim())
+          onChange(e.target.value)
         }
       />
     </div>

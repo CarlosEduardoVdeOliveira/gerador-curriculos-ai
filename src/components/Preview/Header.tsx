@@ -1,18 +1,9 @@
-import { Bot, Check, FileDown, Key, X } from "lucide-react";
-import { useApiKey } from "../../hooks/useApiKey";
+import { Bot, FileDown } from "lucide-react";
 
-export function PersonalHeader() {
-  const { apiKey, saveApiKey, clearApiKey, isValidApiKey, isLoaded } =
-    useApiKey();
-
-  const handleApiKeyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    saveApiKey(e.target.value);
-  };
-
-  const handleClearApiKey = () => {
-    clearApiKey();
-  };
-
+type HeaderProps = {
+  onExportPDF: () => void;
+};
+export function Header({ onExportPDF }: Readonly<HeaderProps>) {
   return (
     <div>
       <header className="bg-white shadow-sm border-b">
@@ -28,13 +19,13 @@ export function PersonalHeader() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full sm:w-auto">
-              <div className="flex items-center gap-2 w-full sm:w-auto">
-                <div className="relative w-full sm:w-auto">
+              {/* <div className="flex items-center gap-2 w-full sm:w-auto">
+                {<div className="relative w-full sm:w-auto">
                   <Key className="lucide lucide-key absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                   <input
                     placeholder="Cole sua API Key"
-                    value={apiKey}
-                    onChange={handleApiKeyChange}
+                    value='{apiKey}'
+                    onChange='{handleApiKeyChange}'
                     className={`
                       pl-10 pr-12 py-2 w-full sm:w-64 text-sm border rounded-lg transition-all duration-200 responsive-input
                       ${
@@ -64,10 +55,13 @@ export function PersonalHeader() {
                       )}
                     </div>
                   )}
-                </div>
-              </div>
+                </div>}
+              </div> */}
               <div className="relative w-full sm:w-auto">
-                <button className="w-full sm:w-auto px-4 lg:px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:hover:scale-100 flex items-center justify-center gap-2 lg:gap-3 font-medium responsive-button">
+                <button
+                  onClick={onExportPDF}
+                  className="w-full sm:w-auto px-4 lg:px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:hover:scale-100 flex items-center justify-center gap-2 lg:gap-3 font-medium responsive-button"
+                >
                   <FileDown className="h-4 w-4 lg:h-5 lg:w-5" />
                   <span className="text-sm lg:text-base">Exportar PDF</span>
                 </button>
